@@ -1,0 +1,65 @@
+﻿@page
+@model RegisterModel
+@using TiendaOnline.Utilidades
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+<div class="row">
+    <div class="col-md-4 border DivPrincipalRegister">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h4 class="px-3 py-3">Registrate</h4>
+            <br />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+
+                <input asp-for="Input.Email" placeholder="Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Nombre" placeholder="Nombre" class="form-control" />
+                <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Direccion" placeholder="Dirección" class="form-control" />
+                <span asp-validation-for="Input.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Ciudad" placeholder="Ciudad" class="form-control" />
+                <span asp-validation-for="Input.Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Password" placeholder="Contraseña" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.ConfirmPassword" placeholder="Confirmar contraseña" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            @if (User.IsInRole(CNT.Admin))
+            {
+                <div class="form-group row">
+                    <div class="col-10">
+                        <input type="radio" name="rad" value="@CNT.Admin" />@CNT.Admin
+                        <input type="radio" name="rad" value="@CNT.Usuario" />@CNT.Usuario
+                    </div>
+
+                </div>}
+            <button type="submit" class="btn btn-primary form-control m-2"><i class="fas fa-user"></i> Registrarse</button>
+            <br />
+        </form>
+    </div>
+    <br />
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

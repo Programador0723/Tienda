@@ -1,0 +1,12 @@
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\bin\Debug\net5.0\TiendaOnline.Utilidades.deps.json
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\bin\Debug\net5.0\TiendaOnline.Utilidades.dll
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\bin\Debug\net5.0\ref\TiendaOnline.Utilidades.dll
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\bin\Debug\net5.0\TiendaOnline.Utilidades.pdb
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.csproj.AssemblyReference.cache
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.AssemblyInfoInputs.cache
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.AssemblyInfo.cs
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.dll
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\ref\TiendaOnline.Utilidades.dll
+C:\Users\ANONYMOUS\source\repos\TiendaOnline.Utilidades\obj\Debug\net5.0\TiendaOnline.Utilidades.pdb

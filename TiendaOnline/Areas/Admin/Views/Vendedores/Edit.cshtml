@@ -1,0 +1,84 @@
+﻿@model TiendaOnline.Models.Models.Vendedor
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+
+            <input type="hidden" asp-for="@Model.Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-3">
+                    <label asp-for="Cedula"></label>
+                </div>
+                <div class="col-9">
+                    <input type="text" asp-for="Cedula" class="form-control" />
+                    <span asp-validation-for="Cedula" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <div class="row">
+                <div class="col-3">
+                    <label asp-for="Nombre"></label>
+                </div>
+                <div class="col-9">
+                    <input type="text" asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <div class="row">
+                <div class="col-3">
+                    <label asp-for="Telefono"></label>
+                </div>
+                <div class="col-9">
+                    <input type="text" asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <div class="row">
+                <div class="col-3">
+                    <label asp-for="imagen"></label>
+                </div>
+                <div class="col-9">
+                    <input type="file" asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <hr />
+
+
+            <div class="row">
+                <div class="col-6 float-right">
+                    <a asp-action="index" asp-controller="vendedores" class="btn btn-primary form-control">Volver</a>
+                </div>
+                <div class="col-6 float-right">
+                    <input type="submit" asp-route-id="@Model.Id" class=" btn btn-success form-control" value="Enviar" />
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="col-3">
+            <div>
+                <img src="@Model.imagen" width="100%" style="border-radius:5px" />
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+
+
+

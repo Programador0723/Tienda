@@ -1,0 +1,55 @@
+﻿@model TiendaOnline.Models.HomeVm
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+
+    <div>
+       
+
+       
+
+            @if (Model.productos.Count() > 0)
+            {
+        <div class="row">
+           
+                @foreach (var item in Model.productos.OrderBy(x => x.Id))
+                {
+
+                    <div class=" col-3">
+
+                        <div class="card cartahover" style="box-shadow:0 4px 8px 0 pink; border-radius:0px">
+                            <div class="card-header" style="height:300px">
+                                <img src="@item.Imagen" class="card-img" width="100%" style="height:auto" />
+                            </div>
+                            <div class="card-body">
+                                <div class="row px-2">
+                                    <div><h5>@item.Nombre</h5></div>
+                                    &nbsp;
+                                    <div class="float-right px-3"> <button href="#" class="text-white px-2 py-2" style="background-color:pink; border-radius:0px; border:none">Comprar</button></div>
+
+
+                                </div>
+                                <p class="text-success">$RD: @item.Precio</p>
+                                <p><strong>Venededor:</strong>@item.vendedor.Nombre</p>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <hr />
+
+
+
+
+                    </div>
+                
+
+
+            }
+        </div>
+            }
+       
+
+    </div>
+</div>

@@ -1,0 +1,107 @@
+﻿@model TiendaOnline.Models.Models.vmproductos
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="producto.Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row border p-4">
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="col-2">
+                    <label asp-for="producto.Nombre"></label>
+                </div>
+                <div class="col-9">
+                    <input type="text" asp-for="producto.Nombre" class="form-control" />
+                    <span asp-validation-for="producto.Nombre"></span>
+                </div>
+            </div>
+            <br />
+            <hr />
+        </div>
+
+
+
+
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="col-2">
+                    <label asp-for="producto.Precio"></label>
+                </div>
+                <div class="col-9">
+                    <input type="text" asp-for="producto.Precio" class="form-control" />
+                    <span asp-validation-for="producto.Precio"></span>
+                </div>
+
+
+            </div>
+            <br />
+            <hr />
+        </div>
+        <br />
+        <hr />
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="col-2">
+                    <label asp-for="producto.Negociable"></label>
+                </div>
+                <div class="col-9">
+                    <input type="checkbox" asp-for="producto.Negociable" class="form-control" />
+                    <span asp-validation-for="producto.Negociable"></span>
+                </div>
+
+
+            </div>
+            <br />
+        </div>
+
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="col-2">
+                    <label asp-for="producto.Imagen"></label>
+                </div>
+                <div class="col-9">
+                    <input type="file" asp-for="producto.Imagen" class="form-control" />
+                    <span asp-validation-for="producto.Imagen"></span>
+                </div>
+
+
+            </div>
+            <br />
+            <hr />
+        </div>
+
+        <div class="col-6 offset-3">
+            <div class=" form-group row">
+                <div class="col-2">
+                    <label asp-for="producto.vendedor.Nombre"></label>
+                </div>
+                <div class="col-9">
+                    @Html.DropDownListFor(m => m.producto.VendedorId, Model.ListaVmVende, "Selecione Vendedor", new { @class = "form-control" })
+
+                </div>
+            </div>
+            <br />
+            <hr />
+
+        </div>
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="col-6">
+                    <a asp-action="Index" asp-controller="productos" class="btn btn-primary form-control">Volver</a>
+                </div>
+                <div class="col-6">
+                    <button type="submit" asp-action="create" class="form-control btn btn-success" value="Enviar"></button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</form>
+

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="float-right">
+            <a asp-action="Create" asp-controller="Productos" class="btn btn-success">InsertarProducto</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="col-12">
+        <table class="table table-bordered table-striped" id="tblProductos" width="100%">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Negociable</td>
+                    <td>Vendedor</td>
+                    <td></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/Producto.js">
+
+    </script>
+}
+

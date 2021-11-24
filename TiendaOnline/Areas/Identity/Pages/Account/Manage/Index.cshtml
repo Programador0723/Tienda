@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@using TiendaOnline.Utilidades
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <H5 class="text-center">Editar Pérfil</H5>
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (User.IsInRole(CNT.Admin))
+            {
+                <div class="form-group">
+
+                    <input asp-for="Username" class="form-control" placeholder="Correo" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+
+                    <input asp-for="Username" class="form-control" disabled placeholder="Correo" />
+                </div>
+            }
+            <div class="form-group">
+
+                <input asp-for="Input.PhoneNumber" placeholder="Teléfono" class="form-control" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Nombre" placeholder="Nombre" class="form-control" />
+                <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Pais" placeholder="País" class="form-control" />
+                <span asp-validation-for="Input.Pais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="Input.Direccion" placeholder="Dirección" class="form-control" />
+                <span asp-validation-for="Input.Direccion" class="text-danger"></span>
+            </div>
+            <button id="update-profile-button" type="submit" class="btn btn-primary form-control">Guardar</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

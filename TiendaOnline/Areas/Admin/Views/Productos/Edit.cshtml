@@ -1,0 +1,65 @@
+﻿@model TiendaOnline.Models.Models.vmproductos
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>Edit</h4>
+
+<form action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class=" row">
+        <input type="hidden" asp-for="producto.Id" />
+        <div class="col-6 offset-3">
+
+            <div class="col 1">
+                <label asp-for="producto.Nombre"></label>
+            </div>
+            <div class="col 4">
+                <input type="text" asp-for="producto.Nombre" class="form-control" />
+                <span asp-validation-for="producto.Nombre" class="text-danger"></span>
+            </div>
+
+
+            <div class="col 1">
+                <label asp-for="producto.Precio"></label>
+            </div>
+            <div class="col 4">
+                <input type="text" asp-for="producto.Precio" class="form-control" />
+                <span asp-validation-for="producto.Precio" class="text-danger"></span>
+            </div>
+
+            <div class="col 1">
+                <label asp-for="producto.Negociable"></label>
+            </div>
+            <div class="col 4">
+                <input type="checkbox" asp-for="producto.Negociable" class="form-control" />
+                <span asp-validation-for="producto.Negociable" class="text-danger"></span>
+            </div>
+            <div class="col 1">
+                <label asp-for="producto.vendedor.Nombre"></label>
+            </div>
+            <div class="col 4">
+                @Html.DropDownListFor(m => m.producto.VendedorId, Model.ListaVmVende,
+               "-seleccione nuevo vendedor", new { @class = "form-control" })
+            </div>
+            <div class="col 1">
+                <label asp-for="producto.Imagen"></label>
+            </div>
+            <div class="col 4">
+                <input type="file" asp-for="producto.Imagen" class="form-control" />
+                <span asp-validation-for="producto.Imagen" class="text-danger"></span>
+            </div>
+            <div>
+                <button type="submit" asp-route-id="@Model.producto.Id" class="btn btn-success"> Enviar</button>
+            </div>
+
+
+        </div>
+        <div class="col-2">
+            <img src="@Model.producto.Imagen" width="100px" height="50xp"/>
+        </div>
+
+    </div>
+
+</form>
+
